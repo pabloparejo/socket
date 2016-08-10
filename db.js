@@ -6,7 +6,7 @@ module.exports = {
     connection: connection.promise
 }
 
-var models = {}
+var models;
 
 mongoose.connect('mongodb://localhost/test');
 var db = mongoose.connection;
@@ -16,15 +16,25 @@ db.on('error', function(error){
     connection.reject(new Error(error))
 });
 db.once('open', function() {
-    var MessageSchema = mongoose.Schema({
+
+    models = {
+        Message: Message()
+    }
+
+    connection.resolve(models)
+});
+
+function Model(name, schema) {
+    var Schema = mongoose.Schema(schema)
+    return mongoose.model(name, Schema)
+}
+
+function Message(){
+    return Model("Message", {
         user: String,
         message: String,
         datetime: Date
     })
-
-    models.Message = mongoose.model("Message", MessageSchema)
-
-    connection.resolve(models)
-});
+}
 
 
