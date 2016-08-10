@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Socket.IO chat</title>
+        <style>
+            * { margin: 0; padding: 0; box-sizing: border-box; }
+            body { font: 13px Helvetica, Arial; }
+            form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
+            form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; border-radius: .25rem}
+            form button { width: 9%; background: rgb(100, 255, 120); border: none; padding: 10px; border-radius: .25rem}
+            #messages { list-style-type: none; margin: 0; padding: 0; }
+            #messages li {margin: .25rem;}
+            #messages li p {background: #eee; padding: .5rem; display: inline-block; border-radius: .5rem .5rem .5rem 0rem;}
+            #messages li.own {text-align: right;}
+            #messages li.own p {background: #AFA; border-radius: .5rem .5rem 0rem .5rem;}
+        </style>
+    </head>
+    <body>
+        <ul id="messages"></ul>
+        <form action="">
+            <input id="m" autocomplete="off" placeholder="Type your message here..." /><button>Send</button>
+        </form>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+        <script>
+            var socket = io();
+            var username = prompt("Please enter your name", "");
+            var lastUser;
+            $('form').submit(function(){
+                var data = {
+                    user: username,
+                    message: $('#m').val()
+                }
+                socket.emit('chat message', data);
+                $('#m').val('');
+                return false;
+            });
+            socket.on('chat message', function(data){
+                var own = data.user == username
+                appendMsg(data, own)
+            });
+
+            function appendMsg(data, own) {
+                var cssClass = own ? "own" : "" 
+                $('#messages').append($('<li class="'+cssClass+'">').append($('<p>').text(data.message)));
+            }
+        </script>
+    </body>
+</html>
