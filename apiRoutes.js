@@ -38,12 +38,7 @@ function defaultPost(model) {
     return function(req, res) {
         var obj = new model(req.body)
         obj.save(function (err) {
-            if (err) {
-                console.log(err)
-                res.status(400).json(err)
-            }else{
-                res.status(201).json(obj)
-            }
+            err ? res.status(400).json(err) : res.status(201).json(obj)
         })
     }
 }
