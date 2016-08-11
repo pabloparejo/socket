@@ -3,7 +3,12 @@ var mongoose = require("mongoose")
 var connection = Q.defer()
 
 module.exports = {
-    connection: connection.promise
+    connection: connection.promise,
+    models: {
+        User: User(),
+        Message: Message(),
+        Conversation: Conversation()
+    }
 }
 
 var models;
@@ -16,11 +21,6 @@ db.on('error', function(error){
     connection.reject(new Error(error))
 });
 db.once('open', function() {
-
-    models = {
-        Message: Message()
-    }
-
     connection.resolve(models)
 });
 
@@ -31,9 +31,27 @@ function Model(name, schema) {
 
 function Message(){
     return Model("Message", {
-        user: String,
+        user: {type: mongoose.Schema.Types.ObjectId, ref:"User"},
         message: String,
-        datetime: Date
+        createdOn: Date
+    })
+}
+
+function User(){
+    return Model("User", {
+        fullname: String,
+        username: String,
+        password: String,
+        createdOn: {type: Date, default: Date.now}
+    })
+}
+
+function Conversation(){
+    return Model("Conversation", {
+        name: String,
+        users: [{type: mongoose.Schema.Types.ObjectId, ref:"User"}],
+        isGroup: Boolean,
+        createdOn: {type: Date, default: Date.now}
     })
 }
 
