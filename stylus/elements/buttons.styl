@@ -1,0 +1,30 @@
+.action-top-right, .action-top-left // Habría que modificar estas clases, no se usan como indica el nombre
+    width 45px
+    height 45px
+    position absolute
+    right 0
+    top 2px
+    transition all .5s ease-in-out
+    z-index 5 !important
+
+    &.anti-action
+        opacity 0
+        z-index 1 !important
+
+        &.opacity-1
+            opacity 1
+
+        &:hover
+            background-color #c00 !important
+
+    &.fix-top
+        top -.4rem
+
+    &.icon-add
+        padding 0
+        height 33px
+        width 33px
+
+    &.small
+        height 30px
+        width 30px

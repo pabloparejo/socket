@@ -1,0 +1,199 @@
+
+.modal-button-section
+    background #EEE
+    bottom 0
+    left 0
+    overflow hidden
+    padding 1rem
+    // TODO: El padding deberia ser "padding 1rem 0"
+    // Revisar todos los modals para ver que queda alineado
+    // ya que ahora se esta corrigiendo ese padding sobrante
+    position absolute
+    right 0
+
+.modal-button-padding
+    padding-bottom 3rem !important
+
+
+.reveal-modal-animate-bg
+    background rgba(0,0,0,0.3)
+    bottom 0
+    display none
+    left 0
+    opacity 0
+    position fixed
+    right 0
+    top 0
+    transition all ease-in-out .4s
+
+    &.reveal-modal-bg
+        display block
+        opacity 1
+        z-index 1004
+
+
+
+.reveal-modal.open
+    display block
+    height 93%
+    opacity 0
+    padding 1rem
+    position fixed
+    top 1200px
+    transition all ease-in-out .4s
+    visibility visible
+
+    &.modal-scroll-height
+        height 100%
+        overflow-y auto
+
+    &.custom-tiny
+        border 2px solid white
+        bottom 0
+        height 100%
+        left inherit
+        opacity .75
+        overflow-y auto
+        padding 1rem 0
+        right -320px
+        top 0
+        min-width auto
+        transition all ease-in-out .3s
+        width 300px
+        &.show
+            opacity 1
+            right -0.05rem
+            top 0
+            transition all ease-in-out .3s
+            width 100%
+
+    &.height-auto
+        height auto
+
+    &.show.middle
+        top 30% !important
+
+    &.show.top-middle
+        top 10% !important
+
+    &.show
+        opacity 1
+        top 0
+        transition all ease-in-out .4s
+
+    &.small
+        max-width 70rem
+
+    &.review-modal
+        bottom 0
+        left 0
+        min-height auto
+        height auto
+        position fixed
+        right 0
+        top initial
+        width auto
+
+    .scroll-box
+        height 82%
+        overflow-y auto
+        width 100%
+
+        &.docs-modal
+            height 75%
+            display inline-block
+
+    &.tiny
+        max-width 50rem
+
+        &.height-auto
+            height auto
+
+        .scroll-box
+            height 100%
+            padding-bottom 1rem
+        
+        &.custom-tiny
+            min-width auto
+
+
+.reveal-modal .close-reveal-modal
+    left .2em
+    top .2em
+    right initial
+    z-index 999
+
+.reveal-modal .single-doc
+    height 40%
+
+
+/* SMALL ONLY*/
+@media screen and (max-width: 640px)
+
+    .review-doc-modal-position
+        width 100% !important
+        margin-left 0
+
+/* MEDIUM UP */
+@media screen and (min-width: 640px)
+    .reveal-modal
+        &.open.show
+            top 2rem
+        
+            &.review-modal
+                top initial
+        
+        &.open.custom-tiny
+            max-width 350px
+
+
+/* Large */
+@media screen and (min-width: 1025px)
+
+    .reveal-modal
+
+        &.full-for-medium
+            max-width auto
+            width 90% !important
+
+            &.large
+                margin 0 auto !important
+                max-width 85em !important
+                width 70% !important
+
+            &.medium
+                width 60% !important
+
+        &.medium-for-large-up
+            left 0
+            margin 0 auto
+            max-width 60em
+            right 0
+            width 70%
+
+        &.small-for-large-up
+            left 0
+            margin 0 auto
+            max-width 50em
+            right 0
+            width 50%
+
+        &.open.custom-tiny
+            top 51px
+            &.show
+                top 51px
+
+    .review-doc-modal-position
+        width 100% !important
+        margin-left 0.9375rem !important
+    
+    .reveal-modal.open
+        &.review-modal
+            display inline-block
+            left auto
+            right 1rem
+            width 33%
+            bottom initial !important
+            
+            &.show
+                top 1rem

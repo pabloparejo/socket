@@ -1,0 +1,110 @@
+
+.pricing-table
+
+    .title
+        color white
+
+        &.background-alert
+            background-color red
+
+        &.background-blue
+            background-color blue
+
+        &.background-light-blue
+            background-color lightBlue
+
+            &.pointer:hover
+                background blue
+
+        &.background-green
+            background-color green
+
+        &.background-grey
+            background-color darkGrey
+
+        &.background-light-grey
+            background-color lightGrey
+
+
+        &.background-light-grey-opaque
+            background-color lightGreyOpaque
+
+        &.background-main
+            background mainColor
+
+        &.background-none, &.background-none:hover
+            background-color none
+            box-shadow none
+
+        &.background-red
+            background-color red
+
+        &.background-secondary, &.background-secondary-color
+            background-color secondaryColor
+
+        &.background-shade-green
+            background-color greenColorShade
+
+        &.background-shade-main, &.background-main-shade
+            background-color mainColorShade
+
+        &.background-turkey
+            background-color turkey
+
+        &.background-valid
+            background-color green
+
+        &.background-warning, &.background-orange
+            background-color orange
+
+        &.background-white
+            background-color white
+
+
+        &.no-background
+            background none
+
+    .price
+        padding 0.9375rem .25rem
+
+        &.medium
+            font-size 1.5rem
+
+    &.featured
+        border 2px solid orange
+        box-shadow 0 0 8px rgba(0, 0, 0, 0.4)
+        margin-top -2rem
+
+
+        .bullet-item
+            font-size 1rem
+            line-height 1.6
+            padding 0.9375rem .25rem
+
+        .cta-button
+            background-color lightGrey
+            padding-bottom 1.25rem
+            
+
+        .description
+            font-size .85rem
+
+        .price
+            font-size 2.5rem
+
+        .title
+            font-size 1.25rem
+
+
+/* Medium */
+@media screen and (min-width: 640px)
+    .pricing-table.featured
+        .title
+            font-size 1.2rem
+
+/* Large */
+@media screen and (min-width: 960px)
+    .pricing-table
+        .price.medium
+            font-size 1.75rem
+

@@ -1,0 +1,86 @@
+a.text-normal.padding
+    font-size 1rem !important
+    padding 0.75rem 1rem !important
+
+.big-icon
+    font-size 1.75em
+
+    &.icon-cancel
+        color #DDD
+        font-size 1.4em
+
+        &.actual-size
+            font-size 1.75rem
+
+.bold
+    font-weight bold
+
+.semi-bold
+    font-weight 500
+
+.capitalize
+    text-transform capitalize
+
+.huge-icon, .big-title
+    font-size 3rem
+
+.light, .text-light, .lighter
+    font-weight lighter
+
+
+.med-icon
+    font-size 1.25rem !important
+
+    &.icon-cancel
+        font-size 1rem !important
+
+    &.icon-info
+        font-size 1.45rem !important
+
+.normal-font-size, .text-normal
+    font-size 1rem !important
+
+.small-text, .small-icon
+    font-size .9rem
+
+.text-center-mobile
+    text-align center !important
+
+.text-center.text-left
+    text-align center !important
+
+.text-shadow
+    text-shadow(1,1,0.5)
+
+.underline-hover:hover
+    text-decoration underline
+
+    .underline-hover
+        text-decoration underline
+
+.uppercase
+    text-transform uppercase
+
+/* SMALL ONLY */
+@media screen and (max-width: 40rem)
+    .text-center-for-small
+        text-align center
+
+/* Medium */
+@media screen and (min-width: 640px)
+
+    .text-center-mobile
+        text-align inherit
+
+        &.text-right, &.right-text
+            text-align right !important
+
+    .text-center-medium-up
+        text-align center !important
+
+
+/* Large */
+@media screen and (min-width: 1025px)
+
+    .normal-size-font-large-up, .normal-size-font-large-up span
+        font-size 1rem !important

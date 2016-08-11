@@ -3,6 +3,7 @@ const bodyParser= require('body-parser')
 const app = express()
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
+app.use(express.static('public'));
 
 const http = require("http").Server(app)
 const io = require("socket.io")(http)
@@ -11,7 +12,7 @@ const db = require("./db.js")
 const api = require("./apiRoutes.js")(app, express.Router(), db)
 
 app.get("/", function (req, res) {
-    res.sendFile(__dirname + '/html/index.html')
+    res.sendFile(__dirname + '/static/index.html')
 })
 
 

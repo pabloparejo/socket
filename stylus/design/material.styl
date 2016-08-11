@@ -1,0 +1,533 @@
+detail_image_width = 100px
+
+.datepicker-input
+    position relative
+
+    > .datepicker
+        left 0
+        position absolute
+        right 0
+        shadow-z1-bottom()
+        top -15.6rem
+        z-index 99
+
+.datepicker
+
+    &.max-width
+        max-width 23.5rem
+
+    &.border
+        border 1px solid mainColorShade
+
+    .displayed-month
+
+        &.white td
+            color white
+            font-weight 500
+
+    .month-select:hover
+        background lightGrey
+    table
+        background white
+        tr, tr.even, tr.alt, tr:nth-of-type(even)
+            height 2.25rem
+            td
+                padding .5rem .6rem !important
+                text-align center
+
+                &.dow
+                    font-weight bold
+
+        .day
+            cursor pointer
+
+            &:hover, &.active
+                background lightGrey
+            &.active
+                background mainColor
+                color white
+                font-weight bold
+            &.old
+                background lightGrey
+                &.active
+                    background mainColor
+            &.allowed
+                cursor pointer
+
+            &.not-allowed
+                background lightGreyOpaque
+                cursor not-allowed
+                color mediumGrey
+            &.new
+                color darkGreyColor
+
+    .timepicker
+        input
+            margin-bottom 0
+            margin-top .2rem
+
+.detail-header
+
+    .detail-image-container
+        height detail_image_width
+        margin 1rem auto .25rem
+        overflow hidden
+        vertical-align middle
+        width detail_image_width
+
+        &.circle
+            border-radius 100%
+            vertical-align top
+
+
+        img
+            width 100%
+
+    .detail-info
+        .title
+            margin-left 1rem
+            text-align center
+
+        display block
+        padding 1rem
+
+
+.floating-action-button
+    background mainColor
+    border-radius 100%
+    bottom 1.5rem
+    bottom-shadow(2,2,0.35)
+    color white
+    font-size 1.25rem
+    height 3rem
+    padding-top .75rem
+    position fixed
+    right 1.5rem
+    text-align center
+    transition all ease-in .25s
+    width 3rem
+    z-index 99
+    &:hover
+        background mainColorHover
+        bottom-shadow(3,3,0.35)
+        color white
+
+    &:focus, &:active
+        bottom-shadow(1,1,0.5)
+        color white
+        
+
+    [class^="icon-"], [class*=" icon-"]
+        font-weight lighter
+
+    .icon-plane
+        margin-left -.25rem
+        font-size 1.5rem
+        line-height 1.1
+
+.list, .material-list
+    list-style none
+    margin-left .75rem
+
+    li
+        border-bottom 1px solid greyColor
+        padding-bottom .3rem
+        padding-top .3rem
+
+
+input.material
+    background none
+    border 0
+    border-bottom 2px solid mediumGrey
+    border-radius 0 !important
+    box-shadow none
+    color blue
+    font-family Roboto, Lato, Arial, sans-seriff
+    font-size 1rem
+    height auto
+    margin-bottom .51rem
+    margin-left -0.25rem
+    margin-top -0.32rem
+    padding .45rem .3rem .4rem
+    transition all ease-in .2s
+
+    &[type="number"]
+        text-align center
+        width 4.5rem
+
+
+    &[enabled].ng-invalid
+        background lightGrey
+        border-bottom 2px solid red !important
+
+
+    &:hover
+        border-bottom 2px solid #BBB
+
+    &:focus
+        background #F5F5F5
+        border-bottom 2px solid green
+        box-shadow none
+
+    &[disabled]
+        background none
+        border-bottom 2px solid transparent
+        color blue !important
+        opacity 1 !important
+        -webkit-appearance none
+        -webkit-fillcolor blue
+
+    &.medium
+        font-size 1.5rem
+
+    &.big
+        font-size 2rem
+
+    &.blue
+        background rgba(0,0,0,0.01)
+        &:hover
+            background rgba(0,0,0,0.01)
+            border-bottom 2px solid #CCC
+
+        &:focus
+            border-bottom 2px solid blue
+
+    &.center
+        margin-left auto
+        margin-right auto
+
+    &.color-white, &.color-white[disabled]
+        color white !important
+
+
+    &.line
+        padding 0.25rem
+        margin-left -0.5rem
+        margin-top -.25rem
+        margin-bottom 0
+        &:hover
+            background white
+            border-bottom 2px solid blue
+        &:focus
+            background white !important
+
+    &.no-border
+        border 0
+
+    &.no-margin-bottom
+        margin-bottom 0
+
+    &.white
+        &:hover
+            background rgba(255,255,255,0.1)
+            border-bottom 2px solid white
+
+        &:focus
+            background none
+            border-bottom 2px solid white
+
+.tabs.material
+    border-bottom 0
+    display flex
+    margin-bottom 0
+    overflow-x auto
+    padding 0
+    text-align left
+
+    &.border-bottom
+        border-bottom 1px solid lightGrey
+
+    .tab-title
+        flex 1
+
+
+        & > a
+            background-color transparent
+            border-bottom 3px solid transparent
+            border-radius 0 !important
+            color darkBlue
+            font-size .95rem
+            font-weight 400
+            min-width 4.5rem
+            opacity .9
+            padding .5rem 0rem
+            transition all ease-in .1s, background ease-in .15s
+
+            &.color-white
+                color white
+
+
+            &:active
+                background lightGrey
+
+            &:hover, &.active
+                opacity 1
+                border-bottom 3px solid mainColor
+
+                &.accent
+                    border-color accentColor
+
+
+
+.material-button, .material-button:focus
+    background #FFF
+    border 1px solid #EEE
+    border-radius 2px
+    cursor pointer
+    color mainColor
+    display inline-block
+    font-family inherit
+    font-size 1rem
+    font-weight 500
+    line-height 1.1
+    outline none
+    padding 0.5em
+    shadow-z1-button()
+    text-align center
+    transition all ease-in-out .2s
+
+    &.big
+        font-size 1.2rem
+        padding .75em
+
+    &.medium
+        font-size 1.05rem
+        padding .7rem
+
+    &.color-blue
+        color blue
+
+    &.color-red, &.color-red:focus
+        color red
+
+        &:hover
+            color red
+
+    &.color-white, &.color-white
+        color lightGreyOpaque
+
+        &:hover
+            color white
+
+    &:hover, &.color-main:hover, &.color-main:focus
+        background #FFF
+        color mainColorShade
+        shadow-z3-button()
+
+    &:active
+        background #FAFAFA
+        shadow-z0-button()
+        transition all ease-in .04s
+
+    &.disabled
+        color darkGreyColor
+
+    &.no-weight
+        background rgba(0,0,0,0.01)
+        border none
+        box-shadow none
+        line-height 1.2
+        transition all ease-in-out .2s
+        &:active, &:active:hover
+            background rgba(0,0,0,0.05)
+
+        &:hover
+            background rgba(0,0,0,0.035)
+
+        &.strong
+            background rgba(0,0,0,0.45)
+
+            &:active, &:active:hover
+                background rgba(0,0,0,0.75)
+
+            &:hover
+                background rgba(0,0,0,0.55)
+
+
+        &.no-margin-left
+            margin-left -0.5rem !important
+
+        &.no-margin-top
+            margin-top -0.5rem !important
+
+        &.no-margin-top-025
+            margin-top -0.25rem !important
+
+        &.white
+            background rgba(200,200,255,0.01)
+            color white
+
+            &:active, &:active:hover
+                background rgba(200,200,255,0.1)
+                color white
+
+            &:hover
+                background rgba(200,200,255,0.05)
+                color white
+    &.round
+        border-radius 100%
+
+
+.material-table
+    background none
+    border-collapse collapse
+    border none
+    margin 0
+
+    &.bordered
+        td, th
+            border 1px solid mediumGrey
+
+            &:first-child
+                border-left none
+
+            &:last-child
+                border-right none
+
+    &.vertical-bordered
+        tr
+            border none
+        td, th
+            border-bottom none
+            border-right 1px solid mediumGrey
+
+            &:first-child
+                border-left none
+
+            &:last-child
+                border-right none
+
+    thead
+        background none
+
+        &.small-padding
+            tr
+                height 2rem
+            th
+                padding .5rem .25rem
+
+    tbody.small-padding
+        tr
+            height 2.5rem
+        td
+            padding .25rem .125rem
+
+
+    th
+        border-bottom 1px solid mediumGrey
+        color darkGrey
+        font-size .95rem
+        font-weight 500
+        padding 1rem .5rem
+
+    tr:nth-of-type(even)
+        background none
+
+        &.background-light-grey
+            background lightGrey
+
+    tr, tr.alt
+        border-bottom 1px solid grey
+        height 3rem
+
+        &.disabled
+            td, th
+                color #ddd !important
+
+        th
+            &:first-child
+                padding-left 1rem
+            &:last-child
+                padding-right 1rem
+
+        td
+            font-size .95rem
+            font-weight 400
+            padding-right 0.5rem
+
+            &:first-child
+                padding-left 1rem
+            &:last-child
+                padding-right 1rem
+            
+
+        &.hover:hover
+            background lightGrey
+
+        &.selected
+            background lightGrey
+
+        &.small-height
+            height 2rem
+
+    .crop
+        overflow hidden
+        &.circle.small
+            border-radius 100%
+            height 56px
+            width 56px
+
+        img
+            width 100%
+
+
+    .nowrap
+        white-space nowrap
+        width 10px
+
+/* SMALL ONLY */
+@media screen and (max-width: 40rem)
+    .detail-header
+        .detail-image-container
+            height detail_image_width * 0.5
+
+            &.circle
+                width detail_image_width * 0.5
+
+    .border-bottom-for-small
+        border-bottom 1px solid grey
+        padding-bottom .2rem
+
+/* MEDIUM UP */
+@media screen and (min-width: 40rem)
+    .detail-header
+        .detail-image-container
+            float left
+            margin-left 1rem
+
+        .detail-info
+            .title
+                text-align left
+            display block
+            padding 1rem
+            padding-left detail_image_width *1.5
+
+    .floating-action-button
+        bottom 2rem
+        right 2rem
+
+
+/* LARGE UP */
+@media screen and (min-width: 64.063rem)
+
+    .detail-header
+        > .tabs.material
+            border-bottom 0
+            display block
+            margin-left 1rem
+
+
+            .tab-title
+                display inline-block
+                & > a
+                    padding .5rem 1rem .3rem
+
+    .datepicker-input
+        > .datepicker
+            top 2.5rem
+
+    .floating-action-button
+        bottom initial
+        bottom -1.3rem
+        position absolute
+        left 1rem
