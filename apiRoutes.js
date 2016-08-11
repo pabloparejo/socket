@@ -19,8 +19,7 @@ module.exports = function (app, router, db) {
 
 function defaultGet(model){
     return function(req, res) {
-        model.find(function (err, results) {
-            console.log(req.query)
+        model.find(req.query, function (err, results) {
             res.json(results)
         })
     }
