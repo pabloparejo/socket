@@ -6,8 +6,17 @@ module.exports = function (app, router, db) {
         res.json({ message: 'Bear created!' });
     })
 
+    var UsersAPI = {
+        get: defaultGet(models.User),
+        post: defaultPost(models.User)
+    }
+
     router.route("/users")
-        .get(defaultGet(models.User))
+        .get(UsersAPI.get)
+        .post(UsersAPI.post)
+    
+
+
     router.route("/messages")
         .get(defaultGet(models.Message))
     router.route("/conversations")
@@ -21,6 +30,20 @@ function defaultGet(model){
     return function(req, res) {
         model.find(req.query, function (err, results) {
             res.json(results)
+        })
+    }
+}
+
+function defaultPost(model) {
+    return function(req, res) {
+        var obj = new model(req.body)
+        obj.save(function (err) {
+            if (err) {
+                console.log(err)
+                res.status(400).json(err)
+            }else{
+                res.status(201).json(obj)
+            }
         })
     }
 }
