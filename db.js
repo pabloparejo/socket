@@ -1,17 +1,19 @@
 var Q = require("Q")
 var mongoose = require("mongoose")
+var uniqueValidator = require("mongoose-unique-validator")
 var connection = Q.defer()
+
+var models = {
+    User: User(),
+    Message: Message(),
+    Conversation: Conversation()
+}
 
 module.exports = {
     connection: connection.promise,
-    models: {
-        User: User(),
-        Message: Message(),
-        Conversation: Conversation()
-    }
+    models: models
 }
 
-var models;
 
 mongoose.connect('mongodb://localhost/test');
 var db = mongoose.connection;
@@ -24,8 +26,13 @@ db.once('open', function() {
     connection.resolve(models)
 });
 
-function Model(name, schema) {
+function Model(name, schema, plugins) {
     var Schema = mongoose.Schema(schema)
+    if (plugins !== undefined) {
+        for (var i = 0; i < plugins.length; i++) {
+            Schema.plugin(plugins[i])
+        }
+    }
     return mongoose.model(name, Schema)
 }
 
@@ -38,13 +45,15 @@ function Message(){
 }
 
 function User(){
+    var plugins = [uniqueValidator]
     return Model("User", {
         fullname: String,
-        username: String,
+        username: {type: String, required: true, unique: true},
         password: String,
         createdOn: {type: Date, default: Date.now}
-    })
+    }, plugins)
 }
+
 
 function Conversation(){
     return Model("Conversation", {
