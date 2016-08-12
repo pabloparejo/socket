@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app="socket">
     <head>
         <meta name="viewport" content="width=device-width">
 
@@ -9,51 +9,7 @@
         <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic,300' rel='stylesheet' type='text/css'>
     </head>
     <body class="main-background">
-        <div class="login-container text-center">
-            <div class="text-shadow margin-bottom">
-                <h1 class="color-white no-margin-bottom">Socket</h1>
-                <h5 class="color-white">Login to start chating!</h5>
-            </div>
-            <form action="/login"
-                  class="columns small-11 medium-5 large-3 small-centered login-form">
-                <div class="inline-block text-left">
-                    <div class="margin-top columns relative">
-                        <label for="username"
-                               class="material">
-                                Username
-                        </label>
-                        <input  type="text" 
-                                id="username"
-                                name="username"
-                                class="material margin-top-025 grey radius" />
-                    </div>
-                    <div class="margin-top columns relative">
-                        <label for="password"
-                               class="material">
-                                Password
-                        </label>
-                        <input  type="password" 
-                                id="password"
-                                name="password"
-                                class="material margin-top-025 grey radius" />
-                    </div>
-                    <div class="columns">
-                        <button class="material-button margin-top-05 full-width">Login</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-        <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
-        <script type="text/javascript">
-            $("input")
-                .focus(function (elem) {
-                    $("label[for='" + this.id + "']").addClass("rise")
-                })
-                .blur(function (elem) {
-                    if (this.value == "") {
-                        $("label[for='" + this.id + "']").removeClass("rise")
-                    }
-                })
-        </script>
+        <section ng-view></section>
+        <script src="/min/all.js"></script>
     </body>
 </html>
