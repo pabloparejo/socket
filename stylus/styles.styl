@@ -15,13 +15,30 @@
 @import 'spacing/margins.styl'
 @import 'spacing/paddings.styl'
 
+.main-background
+    background linear-gradient(to bottom right, #2BA , #FF7)
+    background linear-gradient(135deg, #163 0%, mainColor 25%, #FFD 75%, #FF7 100%)
 
-form 
+.chat-form 
     background #000
     padding 3px
     position fixed
     bottom 0
     width 100%
+
+.login-container
+    position fixed
+    top 20%
+    left 0
+    right 0
+    
+    .login-form
+        background mediumGrey
+        border-radius .6rem
+        padding 1rem
+        
+        label, input
+            color white
 
 #messages 
     margin 0

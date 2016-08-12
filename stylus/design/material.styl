@@ -143,12 +143,12 @@ input.material
     box-shadow none
     color blue
     font-family Roboto, Lato, Arial, sans-seriff
-    font-size 1rem
+    font-size 1.05rem
     height auto
     margin-bottom .51rem
     margin-left -0.25rem
     margin-top -0.32rem
-    padding .45rem .3rem .4rem
+    padding .4rem .3rem .35rem
     transition all ease-in .2s
 
     &[type="number"]
@@ -225,6 +225,27 @@ input.material
         &:focus
             background none
             border-bottom 2px solid white
+    
+    &.grey
+        background none
+        &:hover
+            border-bottom 2px solid white
+        
+        &:focus
+            background lightGrey
+            border-bottom 2px solid white
+
+label.material
+    bottom 1rem
+    font-size 1.1rem
+    margin 0
+    position absolute
+    transition all ease-out .2s
+    
+    &.rise
+        bottom 2.75rem
+        font-size 0.875rem
+        
 
 .tabs.material
     border-bottom 0
