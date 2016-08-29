@@ -6,7 +6,7 @@ var uglify = require('gulp-uglify');
 var pump = require('pump');
 var ngAnnotate = require('gulp-ng-annotate');
 
-var rootFolder = "public/"
+var rootFolder = "static/public/"
 var jsUri = rootFolder + "js/"
 var minUri = rootFolder + "min/"
 var paths = {

@@ -1,4 +1,5 @@
 start mongod
-start nodemon index.js
-start stylus -w stylus/styles.styl -o public/css/
+start nodemon app/index.js
+start stylus -w static/stylus/styles.styl -o static/public/css/
+start gulp
 exit
