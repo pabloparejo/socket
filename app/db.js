@@ -1,4 +1,5 @@
 var Q = require("Q")
+var config = require('./config');
 var mongoose = require("mongoose")
 var uniqueValidator = require("mongoose-unique-validator")
 var connection = Q.defer()
@@ -15,7 +16,7 @@ module.exports = {
 }
 
 
-mongoose.connect('mongodb://localhost/test');
+mongoose.connect(config.database);
 var db = mongoose.connection;
 
 db.on('error', function(error){
