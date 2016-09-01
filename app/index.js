@@ -3,20 +3,20 @@ const bodyParser= require('body-parser')
 const app = express()
 
 const morgan = require('morgan');
-const jwt    = require('jsonwebtoken'); // used to create, sign, and verify tokens
 const config = require('./config'); // get our config file
 
 const http = require("http").Server(app)
 const io = require("socket.io")(http)
 
 const db = require("./db.js")
-const api = require("./apiRoutes")(app, express.Router(), db)
+const apiRoutes = require("./apiRoutes")(express.Router(), db)
 
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(express.static('static/public'));
-app.set('secret', config.secret); // secret variable
+app.set('secretKey', config.secret); // secret variable
+app.use("/api", apiRoutes)
 
 app.get("/", function (req, res) {
     var route = __dirname.replace("app", "static/index.html")
