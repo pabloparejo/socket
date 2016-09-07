@@ -10,7 +10,7 @@ var rootFolder = "static/public/"
 var jsUri = rootFolder + "js/"
 var minUri = rootFolder + "min/"
 var paths = {
-    scripts: ["vendor/angular.min.js", "vendor/angular-route.min.js", "js/**/*.js"].map(route => rootFolder + route)
+    scripts: ["vendor/angular.min.js", "vendor/angular-route.min.js", "vendor/ngStorage.min.js", "js/**/*.js"].map(route => rootFolder + route)
 }
 
 console.log(paths.scripts)
