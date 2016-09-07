@@ -5,9 +5,9 @@
         "auth.services",
         "auth.controllers",
         "home.controllers",
-        "ngRoute"
+        "ngRoute",
+        "ngStorage"
     ])
-
 
     app.constant("viewsUrl", "/views/")
 

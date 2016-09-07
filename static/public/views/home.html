@@ -3,8 +3,8 @@
         <h1 class="color-white no-margin-bottom">Socket</h1>
         <h5 class="color-white">Login to start chating!</h5>
     </div>
-    <form action="/login"
-          class="columns small-11 medium-5 large-3 small-centered login-form">
+    <form class="columns small-11 medium-5 large-3 small-centered login-form"
+          ng-submit="performLogin()">
         <div class="inline-block text-left">
             <div class="margin-top columns relative">
                 <label for="username"
@@ -35,7 +35,9 @@
                         ng-blur="passwordFocus = !passwordFocus" />
             </div>
             <div class="columns">
-                <button class="material-button no-weight white margin-top full-width medium">Login</button>
+                <input type="submit"
+                       class="material-button no-weight white margin-top full-width medium"
+                       value="Login">
             </div>
         </div>
     </form>

@@ -2,20 +2,22 @@
     'use strict';
     
 
-    angular.module('auth.services', [])
+    angular.module('auth.services', ["ngStorage"])
         .factory('AuthenticationService', function Service($http, $localStorage, $q) {
             return {
                 login: login,
                 logout: logout
             };
 
-            function login(username, password, callback) {
+            function login(username, password) {
                 var deferred = $q.defer()
                 $http.post('/api/authenticate', { username: username, password: password})
                     .then(function (response) {
-                        $localStorage.currentUser = { username: username, token: response.token, expires: response.expires};
-                        $http.defaults.headers.common.Authorization = 'Bearer ' + response.token;
-                        deferred.resolve($localStorage.currentUser)
+                        var data = response.data
+                        $localStorage.token = data.token
+                        $localStorage.tokenExpires = data.expires
+                        $http.defaults.headers.common.Authorizationasf = 'Bearer ' + response.token;
+                        deferred.resolve(response)
                     })
                     .catch(function (status, error) {
                         deferred.reject({status: status, error: error})
