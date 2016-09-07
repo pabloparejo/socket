@@ -1,6 +1,7 @@
-const apiControllers = require("./apicontrollers")
-const config = require("./config")
-const jwt    = require('jsonwebtoken');
+const apiControllers    = require("./apicontrollers")
+const config            = require("./config")
+const jwt               = require('jsonwebtoken');
+const ms                = require("ms")
 
 module.exports = function (router, db) {
     var models = db.models
@@ -14,21 +15,24 @@ module.exports = function (router, db) {
             if (err) throw err;
 
             if (!user) {
-                res.json({ success: false, message: 'Authentication failed. User not found.' });
+                res.status(400).json({ message: 'Authentication failed. User not found.' });
             } else if (user) {
                 // check if password matches
                 if (user.password != req.body.password) {
-                    res.json({ success: false, message: 'Authentication failed. Wrong password.' });
+                    res.status(400).json({ success: false, message: 'Authentication failed. Wrong password.' });
                 } else {
+                    var expiresIn = "7 days"
+                    var expires = new Date() + ms(expiresIn) - 10
 
                     var token = jwt.sign(user, config.secret, {
-                        expiresIn: "7 days"
+                        expiresIn: expiresIn
                     });
 
                     res.json({
                         success: true,
                         message: 'Enjoy your token!',
-                        token: token
+                        token: token,
+                        expires: expires
                     });
                 }   
             }

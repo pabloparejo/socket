@@ -17,6 +17,7 @@ module.exports = {
 
 
 mongoose.connect(config.database);
+mongoose.Promise = global.Promise
 var db = mongoose.connection;
 
 db.on('error', function(error){
@@ -28,7 +29,7 @@ db.once('open', function() {
 });
 
 function Model(name, schema, plugins) {
-    var Schema = mongoose.Schema(schema)
+    var Schema = mongoose.Schema(schema, {strict: false})
     if (plugins !== undefined) {
         for (var i = 0; i < plugins.length; i++) {
             Schema.plugin(plugins[i])
