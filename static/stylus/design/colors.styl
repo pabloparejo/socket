@@ -1,0 +1,202 @@
+/* BACKGROUND */
+backgroundColor = #FAFAFA
+
+/* \BACKGROUND */
+
+/* Whites */
+whiteColor = #FAFAFA
+customWhite=#FDFDFD
+/* Whites */
+
+/* Greys */
+greyColor = #EEE
+darkGreyColor = #AAA
+
+darkGrey = #888
+mediumGrey = rgba(0,0,0,0.075)
+mediumGreyOpaque = #ECECEC
+grey = #EAEAEA
+lightGrey = rgba(0,0,0,0.022)
+lightGreyOpaque = #FAFAFA
+/* \Greys */
+
+/* Colors */
+    // Red
+red = #E00
+
+    // Green
+green = #50D0A0
+greenColorHover = #5FDFAF
+
+    // Blue
+darkestBlue = #141f22
+darkBlue = #1f2e33
+blue = #334D55
+lightBlue = #5c7177
+blueTranslucent = rgba(31, 46, 51, 0.25)
+
+    //ORANGE
+orange = #FA2
+lightOrange = #D46B3F
+
+    // Turkey
+turkey = #0BF
+
+/* \Colors */
+
+
+/* MainColors */
+
+mainColor = green
+mainColorHover = greenColorHover
+mainColorShade = greenColorHover
+mainColorTranslucent = greenColorTranslucent
+/* \MainColors */
+
+/* SecondaryColors */
+secondaryColor = #F4ba60
+
+/* \SecondaryColors */
+
+bodyFontColor = blue
+headerFontColor = darkestBlue
+
+shadyColor = rgba(0, 0, 0, .1)
+///////////////////////////////////////////
+
+.background-alert
+    background-color red
+
+.background-blue
+    background-color blue
+
+.background-light-blue
+    background-color lightBlue
+
+    &.pointer:hover
+        background blue
+
+.background-green
+    background-color green
+
+.background-grey
+    background-color darkGrey
+
+.background-light-grey
+    background-color lightGrey
+
+    .background-light-grey
+        background-color grey
+
+.background-light-grey-opaque
+    background-color lightGreyOpaque
+
+.background-medium-grey
+    background-color mediumGrey
+
+.background-medium-grey-opaque
+    background-color mediumGreyOpaque
+
+.background-main
+    background mainColor
+
+.background-none, .background-none:hover
+    background-color none
+    box-shadow none
+
+.background-red
+    background-color red
+
+.background-secondary, .background-secondary-color
+    background-color secondaryColor
+
+.background-shade-main, .background-main-shade
+    background-color mainColorShade
+
+.background-turkey
+    background-color turkey
+
+
+.background-info
+    background-color turkey
+.background-warning
+    background-color orange
+
+.background-valid
+    background-color green
+
+.background-white
+    background-color white
+
+.no-background
+    background none
+
+
+.background-warning-opacity
+    background-color rgba(255, 170, 34, .8)
+
+.background-blue-opacity
+    background-color rgba(51, 77, 85, .8)
+
+.background-turkey-opacity
+    background-color rgba(0, 187, 255, .8)
+
+.background-green-opacity
+    background-color rgba(34, 187, 170, .8)
+
+.layout-selected-background
+    background-color rgba(255, 123, 34, .6) !important
+    /*td:nth-of-type(1n+0)
+        background-color rgba(255, 123, 34, .6)*/
+
+// COLORS
+
+.color-alert, .color-red, .panel .color-red, .rejected
+    color red
+
+.color-background, a.color-background
+    color backgroundColor
+
+.color-bodyFont, .color-body-font, a.color-bodyFont, a.color-body-font
+    color bodyFontColor
+
+.color-blue, .panel .color-blue
+    color blue
+
+.color-darkGrey, .color-dark-grey, a.color-darkGrey, a.color-dark-grey
+    color darkGreyColor
+
+.color-med-grey, .color-medium-grey, a.color-med-grey, a.color-medium-grey
+    color mediumGrey
+
+.color-grey, a.color-grey
+    color greyColor
+
+.color-header-font, a.color-header-font
+    color headerFontColor
+
+.color-info, .color-turkey, .panel .color-turkey
+    color turkey
+
+.color-main, a.color-main, .panel .color-main
+    color mainColor
+
+.color-secondary, a.color-secondary
+    color secondaryColor
+
+.color-success, a.color-success
+    color successColor
+
+.color-warning, .color-orange, .to-expire, .to_expire
+    color #E91
+
+.color-white, a.color-white, .panel .color-white, .color-white tr td, .color-white tr th,
+.color-white.underline-hover, .color-white.underline-hover:hover
+    color white
+
+
+// Filters
+
+.filter-bw
+    -webkit-filter grayscale(100%)
+    filter grayscale(100%)

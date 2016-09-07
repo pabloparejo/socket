@@ -1,0 +1,264 @@
+
+.error-circle
+    background #E00
+    border-radius 50%
+    color white
+    display block
+    height 4rem
+    margin 1.5rem auto .75rem
+    width 4rem
+
+    .icon-cancel
+        display block
+        font-size 1.2rem
+        padding-top 1.45rem
+
+
+fieldset
+
+    &.custom-padding
+        padding 0.25em
+
+    &.custom-padding-top
+        padding-top 0.25rem
+
+    .panel
+        margin-bottom .5rem
+
+        p
+            font-size .9rem
+
+
+footer
+    background blue
+
+    p
+        color white
+
+.help span
+    background rgba(0,0,0,0.2)
+    border-radius 100%
+    bottom 5
+    cursor pointer
+    font-size 1.25em
+    padding .5em
+    position fixed
+    left 5px
+    transition all ease-in-out .2s
+    z-index 9999
+
+    &:hover
+        background green
+        color white
+
+
+hr
+    &.small
+        margin 1rem auto
+        width 30%
+
+.icon-loading.loading
+    animation loadRotation linear 1s infinite
+    display inline-block
+    font-size 2rem
+    height auto
+    width auto
+
+    &.image-loading
+        display block
+        position absolute
+        right 0
+
+    &.big-icon
+        font-size 2.5rem
+
+iframe
+    -webkit-overflow-scrolling touch
+    overflow hidden
+
+img
+
+    &.vertical-align-text-bottom
+        vertical-align text-bottom
+
+    &.small
+        width 70px
+
+    &.medium
+        width 124px
+
+    &.large
+        width 150px
+
+    &.disabled
+        border-right 4px solid darkGrey
+        opacity .8
+
+    &.rejected
+        border-right 4px solid red
+
+    &.valid
+        border-right 4px solid green
+
+    &.to-review
+        border-right 4px solid #0AE
+
+
+.img-centered
+    margin 0 auto
+    display block
+
+
+.legend
+    background lightGreyOpaque
+    display inline-block
+    font-weight normal
+    margin 1rem
+    position static
+    right -3rem
+    top 2rem
+    z-index 30
+
+    li
+        display inline-block
+
+    &.show
+        display inline-block !important
+        position absolute
+        top 3rem
+        right 6rem
+        shadow-z2-bottom()
+        z-index 30
+
+.loading-box
+    background rgba(255,255,255,0.8)
+    bottom 0
+    left 0
+    position absolute
+    right 0
+    top 0
+
+    .pagination, ul.pagination
+        display inline-block
+        overflow hidden !important
+        padding-bottom .1rem
+        vertical-align bottom
+
+        &.right
+            margin-right 1rem
+
+        &.white
+            background white
+            border-bottom 1px solid darkGrey
+            padding-bottom .2em
+
+            .disabled
+                background white !important
+                a
+                    background white !important
+                    color #CDCDCD
+                    cursor default
+
+        li
+            a.disabled
+                color #CCD
+                cursor default
+                &:hover
+                    background none
+
+            a
+                border-radius 1px
+                color #889
+                margin 0 .25rem
+                padding .15rem .25rem
+
+
+                &:focus
+                    background none
+                    background-color none
+
+                &:hover
+                    background lightGrey
+
+        .active
+            a
+            color blue
+            font-weight bold
+
+.pagination, ul.pagination
+    display inline-block
+    overflow hidden !important
+    padding-bottom .1rem
+    vertical-align bottom
+
+    &.right
+        margin-right 1rem
+
+    &.white
+        background white
+        border-bottom 1px solid darkGrey
+        padding-bottom .2em
+
+        .disabled
+            background white !important
+            a
+                background white !important
+                color #CDCDCD
+                cursor default
+
+    li
+        a.disabled
+            color #CCD
+            cursor default
+            &:hover
+                background none
+
+        a
+            border-radius 1px
+            color #889
+            margin 0 .25rem
+            padding .15rem .25rem
+
+
+            &:focus
+                background none
+                background-color none
+
+            &:hover
+                background lightGrey
+
+    .active
+        a
+        color blue
+        font-weight bold
+
+.responsive-video
+    height 0
+    padding-bottom 50%
+    padding-top 25px
+    position relative
+
+    iframe
+        height 100%
+        left 0
+        position absolute
+        top 0
+        width 100%
+
+.success-circle
+    background #2BA
+    border-radius 50%
+    color white
+    display block
+    font-size 2rem
+    height 4rem
+    margin 1.5rem auto .75rem
+    width 4rem
+
+    .icon-check
+        display block
+        padding-top 1rem
+
+svg g text
+    font-size 13px !important
+    font-family Roboto, Lato, Arial, sans-serif !important

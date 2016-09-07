@@ -1,0 +1,44 @@
+<div class="login-container text-center">
+    <div class="text-shadow margin-bottom">
+        <h1 class="color-white no-margin-bottom">Socket</h1>
+        <h5 class="color-white">Login to start chating!</h5>
+    </div>
+    <form class="columns small-11 medium-5 large-3 small-centered login-form"
+          ng-submit="performLogin()">
+        <div class="inline-block text-left">
+            <div class="margin-top columns relative">
+                <label for="username"
+                       class="material"
+                       ng-class="{'rise': usernameFocus || username.length > 0}">
+                        Username
+                </label>
+                <input  type="text"
+                        ng-model="username" 
+                        id="username"
+                        name="username"
+                        class="material margin-top-025 grey radius"
+                        ng-focus="usernameFocus = !usernameFocus"
+                        ng-blur="usernameFocus = !usernameFocus" />
+            </div>
+            <div class="margin-top columns relative">
+                <label for="password"
+                       class="material"
+                       ng-class="{'rise': passwordFocus || password.length > 0}">
+                        Password
+                </label>
+                <input  type="password"
+                        ng-model="password" 
+                        id="password"
+                        name="password"
+                        class="material margin-top-025 grey radius"
+                        ng-focus="passwordFocus = !passwordFocus"
+                        ng-blur="passwordFocus = !passwordFocus" />
+            </div>
+            <div class="columns">
+                <input type="submit"
+                       class="material-button no-weight white margin-top full-width medium"
+                       value="Login">
+            </div>
+        </div>
+    </form>
+</div>

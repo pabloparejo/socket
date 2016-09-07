@@ -1,0 +1,367 @@
+/* Absolute and Relative positions */
+.absolute
+    position absolute
+
+.fixed
+    position fixed !important
+
+.relative
+    position relative
+    .fix-icon-top
+        position absolute
+        top -0.05rem
+
+    &.top-0
+        top 0
+
+.static
+    position static
+
+.bottom
+    bottom 0
+    position absolute
+
+.bottom-0
+    bottom 0
+
+.bottom-1
+    bottom 1rem
+
+.bottom-2
+    bottom 2rem
+
+.left-initial
+    left initial
+
+
+.left-0
+    left 0
+
+.left-1
+    left 1rem
+
+.left-2
+    left 2rem
+
+.left-50
+    left -100%
+
+.left-negative-1
+    left -1rem
+
+.left-negative-15
+    left -1.5rem
+
+.left-negative-2
+    left -2rem
+
+.right-0
+    right 0
+
+.right-1
+    right 1rem
+
+.right-negative-1
+    right -1rem
+
+.right-negative-125
+    right -1.25rem
+
+.right-negative-15f
+    right -1.8rem
+
+.right-negative-2
+    right -2rem
+
+.top-initial
+    top initial
+
+.top-0
+    top 0
+
+.top-05
+    top 0.5rem
+
+.top-075
+    top 0.75rem
+
+.top-1
+    top 1rem
+
+.top-negative-0
+    top -0
+
+
+.top-negative-025
+    top -0.25rem
+
+.top-negative-05
+    top -0.5rem
+
+.top-negative-075
+    top -0.75rem
+
+.top-negative-1
+    top -1rem
+
+.z1-header
+    position relative
+    z-index 1
+
+.z-index-3
+    position relative
+    z-index 3
+
+.z-index-9
+    z-index 9 !important
+
+.z-index-99
+    z-index 99
+
+/* Display and margin positioning */
+
+
+.block
+    display block !important
+    width 100%
+
+.block-center, .center-block
+    float none
+    margin-left auto
+    margin-right auto
+
+
+.fixed-height
+    height 800px
+
+.full, .full-width
+    max-width initial
+    width 100% !important
+
+.full-height
+    height 100%
+
+.force-full-height
+    height 96%
+    min-height 95%
+
+.hide
+    display none !important
+
+.hidden
+    visibility hidden
+
+.height-auto
+    height auto
+
+.height-60
+    height 45%
+
+
+.inline
+    display inline !important
+
+.inline-block
+    display inline-block
+    &.show
+        display inline-block !important
+
+
+.max-height
+    max-height 440px
+
+    &.scroll-box, &.medium
+        max-height 150px
+        overflow-y auto
+
+        &.small
+            max-height 125px
+
+        &.medium
+            max-height 150px
+
+        &.large
+            max-height 175px
+
+.max-width
+    max-width 62.5rem
+    &.card
+        width 100%
+
+.max-width-15
+    max-width 230px
+
+.max-width-40
+    max-width 50%
+
+.min-width-80
+    min-width 80%
+
+.no-max-width
+    max-width 100%
+
+
+.no-float
+    float none !important
+
+.overflow-hidden
+    overflow hidden
+
+.overflow-y-hidden
+    overflow-y hidden !important
+
+.overflow-visible
+    overflow visible
+
+.overflow-x-visible
+    overflow-x visible !important
+
+.overflow-x-scroll
+    overflow-x auto
+    -webkit-overflow-scrolling touch
+
+.overflow-y-scroll
+    overflow-y auto
+    -webkit-overflow-scrolling touch
+
+.show-for-tablet-landscape
+    display none
+
+.valign-top
+    vertical-align top
+
+/* SMALL ONLY */
+@media screen and (max-width: 40rem)
+    .block-for-small
+        display block
+        width 100%
+
+    .static-for-small, .static-for-small.absolute
+        position static
+
+    .margin-bottom-small
+        margin-bottom 1rem
+
+    .row.small-collapse>.column, .row.small-collapse>.columns
+        padding-left 0
+        padding-right 0
+
+// small height screens
+@media screen and (max-height: 680px)
+
+    .max-height
+        max-height 300px
+
+        &.scroll-box
+            max-height 200px
+
+/* Medium */
+@media screen and (min-width: 640px)
+
+    .block-for-medium-up
+        display block !important
+        width 100%
+
+    .full-for-medium
+        max-width initial
+        width 100% !important
+
+
+    .height-60
+        height 55%
+
+    .max-width-40
+        max-width 40%
+
+    .relative-medium-up
+        position relative
+    
+    .width-90-medium-up
+        width 90%
+
+// medium height screens
+@media screen and (min-height: 680px) and (max-height: 860px)
+    .bottom-logo
+        position static !important
+
+    .max-height
+        max-height 370px
+
+        &.scroll-box
+            max-height 240px
+            min-height 140px
+
+            &.small
+                max-height 150px
+
+            &.medium
+                max-height 200px
+
+/* Tablet Landscape */
+@media screen and (min-width: 950px) and (orientation: landscape)
+
+    .show-for-tablet-landscape-up,  .show-for-tablet-landscape
+        display inherit !important
+
+    .hide-for-tablet-landscape-up
+        display none !important
+
+    .z1-header
+        position static
+
+
+/* Large */
+@media screen and (min-width: 1025px)
+
+    .block.hide-for-large-up
+        display none !important
+
+    .full-max-height.scroll-box
+        max-height initial !important
+        height 530px !important
+
+    .full-height-for-large-up
+        height 100%
+
+    .height-60
+        height 60%
+
+    .inline-block
+        &.show-for-medium-only
+            display none !important
+        &.show-for-large-up
+            display inline-block !important
+
+    .max-height.scroll-box
+        max-height initial
+        height 300px
+
+        &.height-auto
+            height auto
+
+        &.medium
+            height 200px
+            overflow-x hidden
+
+        &.large
+            max-height 550px
+
+        &.worker-docs
+            height 400px
+
+    .show-for-tablet-landscape
+        display none !important
+
+// large height screens
+@media screen and (min-height: 860px) and (max-height: 1060px)
+
+    .max-height.scroll-box
+        max-height 420px
+        min-height 300px
+
+        &.small
+            max-height 240px
+            min-height 140px
+
+        &.medium
+            max-height 400px

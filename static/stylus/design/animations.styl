@@ -1,0 +1,67 @@
+.ease-in
+	transition all ease-in .2s
+
+.ease-in-out, .ease
+	transition all ease-in-out .2s !important
+	&.slow
+		transition all ease-in-out .6s !important
+
+.fadeOut
+	opacity 0
+	transition all ease-in .35s
+
+	&.fadeIn
+		opacity 1
+
+.fadeIn
+	opacity 1
+	transition all ease-in .35s
+
+
+.hover-show-parent
+	.hover-show
+		opacity 0.2
+
+	&:hover .hover-show
+		opacity 1
+
+.opacity-hover
+	opacity .85
+	transition all ease-in .2s
+	
+	&:hover
+		opacity 1
+
+.no-height, .slide-up
+	transition all ease-in .5s
+	overflow hidden
+	max-height 0px
+
+	&.show, &.slide-down
+		max-height 500px
+
+@media only screen
+	.action-top-right.animate
+		top 90%
+		z-index 10
+
+	.action-top-right.animate.anti-action
+		opacity 1
+		top 80%
+		z-index 9
+
+
+
+@media only screen and (min-width: 40.063em)
+	.action-top-right.animate
+		right -1rem
+		top 85%
+
+	.action-top-right.animate.anti-action
+		right -1rem
+		top 50%
+
+@media only screen and (min-width: 64.063em)
+
+	.action-top-right.animate, .action-top-right.animate.anti-action
+		right 0
